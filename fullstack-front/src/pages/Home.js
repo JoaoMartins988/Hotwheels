@@ -13,7 +13,9 @@ export default function Home() {
 
 const loadCars = async () => {
 const result = await axios.get("http://localhost:8080/carrinhos");
-  setCars(result.data);
+const sortedCars = result.data.sort((a, b) => a.marca.localeCompare(b.marca));
+
+  setCars(sortedCars);
 };
 
 const deleteCars = async (id)=>{
@@ -53,9 +55,8 @@ return (
                 </tr>
               ))}
           </tbody>
-        </table>S
+        </table>
       </div>
-
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
   const handleSearch = () => {
 

@@ -5,6 +5,7 @@ import com.codewitharjun.fullstackbackend.model.Carrinhos;
 import com.codewitharjun.fullstackbackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -31,6 +32,12 @@ public class CarrinhosController {
         return userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id));
     }
+    @GetMapping("/carrinhos/search")
+    List<Carrinhos> searchCarrinhos(@RequestParam("marca") String marca) {
+
+        return userRepository.findByMarca(marca);
+    }
+
 
     @PutMapping("/carrinho/{id}")
     Carrinhos updateCarrinhosById(@RequestBody Carrinhos newCarro, @PathVariable Long id) {
@@ -53,7 +60,4 @@ public class CarrinhosController {
         userRepository.deleteById(id);
         return  "Carrinhos with id " +id+ " has been deleted success.";
     }
-
-
-
 }
