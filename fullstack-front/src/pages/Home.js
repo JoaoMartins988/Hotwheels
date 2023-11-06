@@ -64,5 +64,3 @@ return (
     </div>
   );
 }
-const totalCars = 0;
-export { totalCars };

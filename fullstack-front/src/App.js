@@ -3,9 +3,9 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Navbar from './layout/Navbar';
 import Home from './pages/Home';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AddCar from "./users/AddCar";
-import EditCar from './users/EditCar';
-import ViewCar from './users/ViewCar';
+import AddCar from "./cars/AddCar";
+import EditCar from './cars/EditCar';
+import ViewCar from './cars/ViewCar';
 
 function App() {
   return (

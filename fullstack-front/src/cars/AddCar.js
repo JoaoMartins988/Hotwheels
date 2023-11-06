@@ -4,6 +4,8 @@ import {Link, useNavigate } from "react-router-dom";
 
 export default function AddCar() {
   let navigate=useNavigate();
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
 
   const [car, setCar] = useState({
     marca: "",
@@ -74,12 +76,14 @@ export default function AddCar() {
               Ano
             </label>
             <input
-              type={"text"}
+              type={"number"}
               className="form-control"
               placeholder="Enter ano"
               name="ano"  
               value={ano}
               onChange={(e) => onImputChange(e)}
+              min="1900"
+              max={currentYear}
             />
           </div>
           <button type="submit" className="btn btn-outline-primary">Submit</button>
