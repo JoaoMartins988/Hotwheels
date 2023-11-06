@@ -13,7 +13,7 @@ export default function Home() {
 const loadCars = async () => {
 const result = await axios.get("http://localhost:8080/carrinhos");
 const sortedCars = result.data.sort((a, b) => a.marca.localeCompare(b.marca));
-setTotalCars(result.data.length);
+setTotalCars(sortedCars.length);
 setCars(sortedCars);
 };
 function getTotalCars() {
@@ -28,7 +28,7 @@ const deleteCars = async (id)=>{
 
 return (
     <div className='container'>
-      <h3>Total Cars: {totalCars}</h3>
+      <h4>Total Cars: {totalCars}</h4>
       <div className='py-4'>
         <table className="table border shadow">
           <thead>

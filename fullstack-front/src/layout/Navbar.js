@@ -1,16 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
-import Axios from 'axios';
-import Home from '../pages/Home';
-import { totalCars } from '../pages/Home';
 
 export default function Navbar() {
   const [searchQuery, setSearchQuery] = useState('');
-const mostraTotalCars = () => {
-const totalCarsElemento = document.getElementById('teste');
-totalCarsElemento.textContent = '${totalCars}';
-};
-//mostraTotalCars();
+ 
   const handleSearch = () => {
    console.log('Pesquisando por:', searchQuery);
   };
