@@ -51,12 +51,6 @@ totalCarsElemento.textContent = '${totalCars}';
           <Link className="btn btn-outline-light" to="/addCar" >
             Add Cars
           </Link>
-          <p id="teste"></p>
-          <p>{totalCars}</p>
-          <p>{Home.totalCars}</p>
-          <script src="Home.js">
-
-          </script>
         </div>
       </nav>
     </div>

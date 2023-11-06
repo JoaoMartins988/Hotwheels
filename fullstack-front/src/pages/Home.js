@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 export default function Home() {
   const [cars, setCars] = useState([]);
   const [totalCars, setTotalCars] = useState(10);
-  const id = useParams();
+  const {id} = useParams();
  
   useEffect(() => {
     loadCars();
@@ -28,6 +28,7 @@ const deleteCars = async (id)=>{
 
 return (
     <div className='container'>
+      <h3>Total Cars: {totalCars}</h3>
       <div className='py-4'>
         <table className="table border shadow">
           <thead>
