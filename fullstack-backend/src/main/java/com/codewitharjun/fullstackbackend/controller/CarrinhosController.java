@@ -32,11 +32,11 @@ public class CarrinhosController {
         return userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id));
     }
-    @GetMapping("/carrinhos/search")
+    /*@GetMapping("/carrinhos/search")
     List<Carrinhos> searchCarrinhos(@RequestParam("marca") String marca) {
 
         return userRepository.findByMarca(marca);
-    }
+    }*/
 
 
     @PutMapping("/carrinho/{id}")

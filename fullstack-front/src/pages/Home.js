@@ -4,19 +4,22 @@ import { Link, useParams } from 'react-router-dom';
 
 export default function Home() {
   const [cars, setCars] = useState([]);
- 
-  const {id} = useParams();
+  const [totalCars, setTotalCars] = useState(10);
+  const id = useParams();
  
   useEffect(() => {
     loadCars();
   },[]) ;
-
 const loadCars = async () => {
 const result = await axios.get("http://localhost:8080/carrinhos");
 const sortedCars = result.data.sort((a, b) => a.marca.localeCompare(b.marca));
-
-  setCars(sortedCars);
+setTotalCars(result.data.length);
+setCars(sortedCars);
 };
+function getTotalCars() {
+  return totalCars;
+}
+console.log(getTotalCars());
 
 const deleteCars = async (id)=>{
   await axios.delete(`http://localhost:8080/carrinho/${id}`);
@@ -60,3 +63,5 @@ return (
     </div>
   );
 }
+const totalCars = 0;
+export { totalCars };
