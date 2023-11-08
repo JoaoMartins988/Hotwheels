@@ -6,7 +6,9 @@ export default function EditCar() {
 let navigate = useNavigate();
 
   const { id } = useParams();
-
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  
   const [car, setCars] = useState({
     Marca: "",
     Modelo: "",
@@ -84,12 +86,14 @@ let navigate = useNavigate();
                 Ano
               </label>
               <input
-                type={"text"}
+                type={"number"}
                 className="form-control"
                 placeholder="Enter Ano"
                 name="ano"
                 value={ano}
                 onChange={(e) => onImputChange(e)}
+                min="1900"
+                max={currentYear}
               />
             </div>
             <button type="submit" className="btn btn-outline-primary">Submit</button>
