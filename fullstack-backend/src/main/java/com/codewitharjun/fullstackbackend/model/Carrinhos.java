@@ -14,6 +14,8 @@ public class Carrinhos {
     private String modelo;
     private String cor;
     private String ano;
+    private String preco;
+
 
     public Long getId() {
         return id;
@@ -39,19 +41,15 @@ public class Carrinhos {
         this.modelo = modelo;
     }
 
-    public String getCor() {
-        return cor;
-    }
+    public String getCor() {return cor;}
 
-    public void setCor(String cor) {
-        this.cor = cor;
-    }
+    public void setCor(String cor) {this.cor = cor;}
 
-    public String getAno() {
-        return ano;
-    }
+    public String getAno() {return ano;}
 
-    public void setAno(String ano) {
-        this.ano = ano;
-    }
+    public void setAno(String ano) {this.ano = ano;}
+
+    public String getPreco() {return preco;}
+
+    public void setPreco(String preco) {this.preco = preco;}
 }

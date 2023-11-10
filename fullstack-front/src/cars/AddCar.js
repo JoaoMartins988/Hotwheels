@@ -12,9 +12,10 @@ export default function AddCar() {
     modelo: "",
     cor: "",
     ano: "",
+    preco:"",
   });
 
-  const { marca, modelo, cor, ano } = car;
+  const { marca, modelo, cor, ano, preco } = car;
 
   const onImputChange = (e) => { 
    setCar({...car,[e.target.name]: e.target.value });
@@ -84,6 +85,19 @@ export default function AddCar() {
               onChange={(e) => onImputChange(e)}
               min="1900"
               max={currentYear}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="preco" className="form-label">
+              Preço
+            </label>
+            <input
+              type={"number"}
+              className="form-control"
+              placeholder="Enter preço"
+              name="preco"  
+              value={preco}
+              onChange={(e) => onImputChange(e)}
             />
           </div>
           <button type="submit" className="btn btn-outline-primary">Submit</button>

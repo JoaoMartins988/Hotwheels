@@ -7,7 +7,8 @@ const [car, setCars] = useState({
     marca: "",
     modelo: "",
     cor: "",
-    ano: ""
+    ano: "",
+    preco:""
 });
 
 const {id} = useParams();
@@ -45,6 +46,10 @@ const loadCars = async () => {
                                 <li className="list-group-item">
                                     <b>ano:</b>
                                     {car.ano}
+                                </li>
+                                <li className="list-group-item">
+                                    <b>preco:</b>
+                                    {car.preco}
                                 </li>
                             </ul>
                         </div>

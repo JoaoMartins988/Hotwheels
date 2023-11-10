@@ -14,9 +14,10 @@ let navigate = useNavigate();
     Modelo: "",
     Cor: "",
     Ano: "",
+    preco:"",
   });
 
-  const{ marca, modelo, cor, ano } = car;
+  const{ marca, modelo, cor, ano, preco } = car;
 
   const onImputChange = (e) => {
     setCars({ ...car, [e.target.name]: e.target.value });
@@ -95,6 +96,19 @@ let navigate = useNavigate();
                 min="1900"
                 max={currentYear}
               />
+              <div className="mb-3">
+            <label htmlFor="preco" className="form-label">
+              Preço
+            </label>
+            <input
+              type={"number"}
+              className="form-control"
+              placeholder="Enter preço"
+              name="preco"  
+              value={preco}
+              onChange={(e) => onImputChange(e)}
+            />
+            </div>
             </div>
             <button type="submit" className="btn btn-outline-primary">Submit</button>
             <Link className="btn btn-outline-danger mx-2" to="/">Cancel</Link>

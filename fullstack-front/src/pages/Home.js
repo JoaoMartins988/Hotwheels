@@ -37,12 +37,11 @@ return (
               <th scope="col">Marca</th>
               <th scope="col">Modelo</th>
               <th scope="col">Cor</th>
-              <th scope="col">Ano</th>
+              <th scope="col">Ano</th>           
               <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
-
             {
               cars.map((car, index) => (
                 <tr>
@@ -50,7 +49,7 @@ return (
                   <td>{car.marca}</td>
                   <td>{car.modelo}</td>
                   <td>{car.cor}</td>
-                  <td>{car.ano}</td>
+                  <td>{car.ano}</td>                 
                   <td>
                   <Link className="btn btn-primary mx-2"to={`/viewCar/${car.id}`}>View</Link>
                   <Link className="btn btn-outline-primary mx-2"to={`/editCar/${car.id}`}>Edit</Link>

@@ -47,6 +47,7 @@ public class CarrinhosController {
                     carro.setModelo(newCarro.getModelo());
                     carro.setCor(newCarro.getCor());
                     carro.setAno(newCarro.getAno());
+                    carro.setPreco(newCarro.getPreco());
 
                     return userRepository.save(carro);
                 }).orElseThrow(() -> new UserNotFoundException(id));
