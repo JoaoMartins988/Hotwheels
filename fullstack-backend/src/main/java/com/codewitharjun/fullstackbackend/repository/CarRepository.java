@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 
-public interface UserRepository extends JpaRepository<Carrinhos,Long> {
+public interface CarRepository extends JpaRepository<Carrinhos,Long> {
     List<Carrinhos> findByMarca(String marca);
 }
