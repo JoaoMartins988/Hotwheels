@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface CarRepository extends JpaRepository<Carrinhos,Long> {
     List<Carrinhos> findByMarca(String marca);
+    boolean existsByMarcaAndModeloAndCorAndAno(String marca, String modelo, String cor, String ano);
 }

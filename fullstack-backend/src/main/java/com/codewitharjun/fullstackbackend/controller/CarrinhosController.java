@@ -3,11 +3,8 @@ package com.codewitharjun.fullstackbackend.controller;
 import com.codewitharjun.fullstackbackend.exception.UserNotFoundException;
 import com.codewitharjun.fullstackbackend.model.Carrinhos;
 import com.codewitharjun.fullstackbackend.repository.CarRepository;
-import com.codewitharjun.fullstackbackend.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import java.util.List;
 
 
@@ -20,6 +17,13 @@ public class CarrinhosController {
 
     @PostMapping("/carrinho")
     Carrinhos newCarrinhos(@RequestBody Carrinhos newCarrinhos) {
+        if (CarRepository.existsByMarcaAndModeloAndCorAndAno(
+                newCarrinhos.getMarca(),
+                newCarrinhos.getModelo(),
+                newCarrinhos.getCor(),
+                newCarrinhos.getAno())) {
+            return null;
+        }
         return CarRepository.save(newCarrinhos);
     }
 
@@ -38,8 +42,6 @@ public class CarrinhosController {
 
         return CarRepository.findByMarca(marca);
     }*/
-
-
     @PutMapping("/carrinho/{id}")
     Carrinhos updateCarrinhosById(@RequestBody Carrinhos newCarro, @PathVariable Long id) {
         return CarRepository.findById(id)//carro
