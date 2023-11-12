@@ -22,7 +22,8 @@ export default function AddCar() {
     }; 
     const onSubmit=async(e)=>{
       e.preventDefault();
-      await axios.post("http://localhost:8080/carrinho", car);
+      const response = await axios.post("http://localhost:8080/carrinho", car);
+      alert(response.data);
       navigate("/");
     };
 return (

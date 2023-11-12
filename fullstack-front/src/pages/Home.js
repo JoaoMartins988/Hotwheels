@@ -19,10 +19,10 @@ setCars(sortedCars);
 function getTotalCars() {
   return totalCars;
 }
-console.log(getTotalCars());
 
 const deleteCars = async (id)=>{
-  await axios.delete(`http://localhost:8080/carrinho/${id}`);
+  const response = await axios.delete(`http://localhost:8080/carrinho/${id}`);
+  alert(response.data);
   loadCars();
 };
 

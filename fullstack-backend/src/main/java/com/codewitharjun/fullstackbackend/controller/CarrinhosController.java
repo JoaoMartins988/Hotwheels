@@ -16,15 +16,16 @@ public class CarrinhosController {
     private CarRepository CarRepository;
 
     @PostMapping("/carrinho")
-    Carrinhos newCarrinhos(@RequestBody Carrinhos newCarrinhos) {
+    String newCarrinhos(@RequestBody Carrinhos newCarrinhos) {
         if (CarRepository.existsByMarcaAndModeloAndCorAndAno(
                 newCarrinhos.getMarca(),
                 newCarrinhos.getModelo(),
                 newCarrinhos.getCor(),
                 newCarrinhos.getAno())) {
-            return null;
+            return "Carro duplicado";
         }
-        return CarRepository.save(newCarrinhos);
+        CarRepository.save(newCarrinhos);
+        return "carro introduzido com sucesso";
     }
 
     @GetMapping("/carrinhos")
@@ -62,6 +63,6 @@ public class CarrinhosController {
             throw new UserNotFoundException(id);
         }
         CarRepository.deleteById(id);
-        return  "Carrinhos with id " +id+ " has been deleted success.";
+        return  "Carrinho with id " +id+ " has been deleted success.";
     }
 }
