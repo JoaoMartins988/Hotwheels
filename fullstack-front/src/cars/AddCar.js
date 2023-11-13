@@ -98,6 +98,7 @@ return (
               name="preco"  
               value={preco}
               onChange={(e) => onImputChange(e)}
+              min="0.00"
             />
           </div>
           <button type="submit" className="btn btn-outline-primary">Submit</button>

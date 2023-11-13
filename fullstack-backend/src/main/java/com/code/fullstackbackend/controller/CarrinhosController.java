@@ -46,7 +46,7 @@ public class CarrinhosController {
         return CarRepository.findByMarca(marca);
     }*/
     @PutMapping("/carrinho/{id}")
-    Carrinhos updateCarrinhosById(@RequestBody Carrinhos newCarro, @PathVariable Long id) {
+    String updateCarrinhosById(@RequestBody Carrinhos newCarro, @PathVariable Long id) {
         return carRepository.findById(id)//carro
                 .map(carro -> {
                     carro.setMarca(newCarro.getMarca());
@@ -55,8 +55,18 @@ public class CarrinhosController {
                     carro.setAno(newCarro.getAno());
                     carro.setPreco(newCarro.getPreco());
 
-                    return carRepository.save(carro);
-                }).orElseThrow(() -> new CarNotFoundException(id));
+                    if ((carRepository.existsByMarcaAndModeloAndCorAndAno(
+                            newCarro.getMarca(),
+                            newCarro.getModelo(),
+                            newCarro.getCor(),
+                            newCarro.getAno()))) {
+                        return "Carro duplicado";
+                    } else {
+                        carRepository.save(carro);
+                        return "carro editado com sucesso";
+                    }
+                })
+                .orElseThrow(() -> new CarNotFoundException(id));
     }
 
     @DeleteMapping("/carrinho/{id}")
@@ -68,3 +78,5 @@ public class CarrinhosController {
         return "Carrinho with id " + id + " has been deleted success.";
     }
 }
+
+

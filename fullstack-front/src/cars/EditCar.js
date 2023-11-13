@@ -28,12 +28,14 @@ let navigate = useNavigate();
     
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:8080/carrinho/${id}`, car);
-    navigate("/");
+    const response =  await axios.put(`http://localhost:8080/carrinho/${id}`, car);
+     alert(response.data);
+     navigate("/");
   };
 
   const loadCars = async () => {
     const result = await axios.get(`http://localhost:8080/carrinho/${id}`);
+   
     setCars(result.data);
   };
   return (
