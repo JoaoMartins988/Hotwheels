@@ -4,6 +4,11 @@ import com.code.fullstackbackend.exception.CarNotFoundException;
 import com.code.fullstackbackend.model.Carrinhos;
 import com.code.fullstackbackend.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,6 +37,14 @@ public class CarrinhosController {
     @GetMapping("/carrinhos")
     List<Carrinhos> getAllCarrinhos() {
         return carRepository.findAll();
+    }
+    @GetMapping("/carrinhos/p")
+    ResponseEntity<List<Carrinhos>> getAllCarrinhosByPage(@RequestParam(name = "page", defaultValue = "1") int page,
+                                   @RequestParam(name = "pageSize", defaultValue = "10") int pageSize) {
+        Pageable pageable = PageRequest.of(page-1,pageSize);
+        Page<Carrinhos> carrinhosPage = carRepository.findAll(pageable);
+        List<Carrinhos> carrinhosList = carrinhosPage.getContent();
+        return ResponseEntity.ok(carrinhosList);
     }
 
     @GetMapping("/carrinho/{id}")
