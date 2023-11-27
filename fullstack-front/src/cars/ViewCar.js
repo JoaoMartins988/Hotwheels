@@ -54,7 +54,7 @@ const loadCars = async () => {
                             </ul>
                         </div>
                     </div>
-                    <Link className="btn btn-primary my-2" to={"/"}>back to Home</Link>
+                    <Link className="btn btn-primary my-2" to={"/home"}>back to Home</Link>
                 </div>
             </div>
         </div>

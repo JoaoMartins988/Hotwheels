@@ -26,7 +26,7 @@ function getTotalCars() {
 const deleteCars = async (id)=>{
   const response = await axios.delete(`http://localhost:8080/carrinho/${id}`);
   alert(response.data);
-  loadCars();
+  loadCars(currentPage);
 };
 const handlePageChange = (newPage) => {
   setCurrentPage(newPage);

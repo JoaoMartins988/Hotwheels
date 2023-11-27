@@ -18,10 +18,12 @@ public class Carrinhos {
 
 
     public Long getId() {
+
         return id;
     }
 
     public void setId(Long id) {
+
         this.id = id;
     }
 
@@ -30,38 +32,47 @@ public class Carrinhos {
     }
 
     public void setMarca(String marca) {
+
         this.marca = marca;
     }
 
     public String getModelo() {
+
         return modelo;
     }
 
     public void setModelo(String modelo) {
+
         this.modelo = modelo;
     }
 
     public String getCor() {
+
         return cor;
     }
 
     public void setCor(String cor) {
+
         this.cor = cor;
     }
 
     public String getAno() {
+
         return ano;
     }
 
     public void setAno(String ano) {
+
         this.ano = ano;
     }
 
     public String getPreco() {
+
         return preco;
     }
 
     public void setPreco(String preco) {
+
         this.preco = preco;
     }
 }
