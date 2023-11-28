@@ -4,7 +4,6 @@ import com.code.fullstackbackend.exception.CarNotFoundException;
 import com.code.fullstackbackend.model.Carrinhos;
 import com.code.fullstackbackend.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -23,6 +22,8 @@ public class CarrinhosController {
 
     @PostMapping("/carrinho")
     String newCarrinhos(@RequestBody Carrinhos newCarrinhos) {
+        if (isEmpty(newCarrinhos.getMarca()) || isEmpty(newCarrinhos.getModelo()) || isEmpty(newCarrinhos.getCor())) {
+            return "Marca, Modelo e cor são obrigatórios.";}
         if (carRepository.existsByMarcaAndModeloAndCorAndAno(
                 newCarrinhos.getMarca(),
                 newCarrinhos.getModelo(),
@@ -33,6 +34,10 @@ public class CarrinhosController {
         carRepository.save(newCarrinhos);
         return "carro introduzido com sucesso";
     }
+    private boolean isEmpty(String str) {
+        return str == null || str.trim().isEmpty();
+    }
+
 
     @GetMapping("/carrinhos")
     List<Carrinhos> getAllCarrinhos() {

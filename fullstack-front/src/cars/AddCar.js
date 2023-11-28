@@ -24,7 +24,7 @@ export default function AddCar() {
       e.preventDefault();
       const response = await axios.post("http://localhost:8080/carrinho", car);
       alert(response.data);
-      navigate("/");
+      navigate("/home");
     };
 return (
     <div className="container">
