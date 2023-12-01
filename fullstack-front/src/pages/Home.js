@@ -9,10 +9,12 @@ export default function Home() {
   const PAGE_SIZE = 10;
   const [sortBy, setSortBy] = useState(null);
   const [sortOrder, setSortOrder] = useState('asc');
-  const [searchQuery, setSearchQuery] = useState('');
-
+  const [search, setSearch] = useState('');
+  
   const handleSearch = () => {
-    console.log('Pesquisando por:', searchQuery);
+    const listaCarrosFiltrados = filteredCars();
+    setCars(listaCarrosFiltrados);
+    
   };
 
   useEffect(() => {
@@ -67,6 +69,16 @@ export default function Home() {
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
   };
+  
+
+  const filteredCars = () => {
+    const lowerSearch = search.toLowerCase();
+    if(search.length === 0){
+      loadCars(currentPage);
+    }
+    return cars.filter((car) => car.marca.toLowerCase().includes(lowerSearch)
+    );
+  };
 
   return (
     <div className='container'>
@@ -77,13 +89,12 @@ export default function Home() {
             type="text"
             className="search-box"
             placeholder="procurar..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            value={search}
+            onChange={(ev) => setSearch(ev.target.value)}
           />
           <button
             className="btn btn-primary mx-2"
-            onClick={handleSearch}
-          >
+            onClick= {handleSearch}>
             Pesquisa
           </button>
         </div>
