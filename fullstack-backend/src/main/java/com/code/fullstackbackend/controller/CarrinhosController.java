@@ -58,11 +58,7 @@ public class CarrinhosController {
                 .orElseThrow(() -> new CarNotFoundException(id));
     }
 
-    /*@GetMapping("/carrinhos/search")
-    List<Carrinhos> searchCarrinhos(@RequestParam("marca") String marca) {
 
-        return CarRepository.findByMarca(marca);
-    }*/
     @PutMapping("/carrinho/{id}")
     String updateCarrinhosById(@RequestBody Carrinhos newCarro, @PathVariable Long id) {
         return carRepository.findById(id)//carro

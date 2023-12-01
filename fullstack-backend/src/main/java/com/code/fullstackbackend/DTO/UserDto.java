@@ -1,4 +1,4 @@
-package com.code.fullstackbackend.DTO;
+package com.code.fullstackbackend.dto;
 
 public class UserDto {
 

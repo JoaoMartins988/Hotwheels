@@ -1,12 +1,12 @@
-package com.code.fullstackbackend.Service.Impl;
+package com.code.fullstackbackend.impl;
 
 
-import com.code.fullstackbackend.DTO.LoginDto;
-import com.code.fullstackbackend.DTO.UserDto;
-import com.code.fullstackbackend.Response.LoginResponse;
-import com.code.fullstackbackend.Service.UserService;
+import com.code.fullstackbackend.dto.LoginDto;
+import com.code.fullstackbackend.dto.UserDto;
+import com.code.fullstackbackend.response.LoginResponse;
+import com.code.fullstackbackend.service.UserService;
 import com.code.fullstackbackend.model.User;
-import com.code.fullstackbackend.repository.userRepository;
+import com.code.fullstackbackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ import java.util.Optional;
 
 public class UserImpl implements UserService {
     @Autowired
-    private userRepository userRepository;
+    private UserRepository userRepository;
     @Autowired
     private PasswordEncoder passwordEncoder;
     @Override

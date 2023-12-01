@@ -1,4 +1,4 @@
-package com.code.fullstackbackend.Response;
+package com.code.fullstackbackend.response;
 
 public class LoginResponse {
     String mesage;

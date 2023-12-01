@@ -1,8 +1,8 @@
-package com.code.fullstackbackend.Service;
+package com.code.fullstackbackend.service;
 
-import com.code.fullstackbackend.DTO.LoginDto;
-import com.code.fullstackbackend.DTO.UserDto;
-import com.code.fullstackbackend.Response.LoginResponse;
+import com.code.fullstackbackend.dto.LoginDto;
+import com.code.fullstackbackend.dto.UserDto;
+import com.code.fullstackbackend.response.LoginResponse;
 
 
 public interface UserService {

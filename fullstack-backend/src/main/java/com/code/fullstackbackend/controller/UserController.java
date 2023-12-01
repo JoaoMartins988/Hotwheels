@@ -1,9 +1,9 @@
 package com.code.fullstackbackend.controller;
 
-import com.code.fullstackbackend.DTO.LoginDto;
-import com.code.fullstackbackend.DTO.UserDto;
-import com.code.fullstackbackend.Response.LoginResponse;
-import com.code.fullstackbackend.Service.UserService;
+import com.code.fullstackbackend.dto.LoginDto;
+import com.code.fullstackbackend.dto.UserDto;
+import com.code.fullstackbackend.response.LoginResponse;
+import com.code.fullstackbackend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
