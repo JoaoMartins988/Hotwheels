@@ -135,6 +135,14 @@ export default function Home() {
                   </button>
                 </div>
               </th>
+              <th scope="col">
+                <div>
+                  <span>Tipo</span>
+                  <button className="btn btn-link" onClick={() => handleSort("tipo")}>
+                    {sortBy === "tipo" && sortOrder === "asc" ? "▲" : "▼"}
+                  </button>
+                </div>
+              </th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -146,6 +154,7 @@ export default function Home() {
                 <td>{car.modelo}</td>
                 <td>{car.cor}</td>
                 <td>{car.ano}</td>
+                <td>{car.tipo}</td>
                 <td>
                   <Link className="btn btn-primary mx-2" to={`/viewCar/${car.id}`}>View</Link>
                   <Link className="btn btn-outline-primary mx-2" to={`/editCar/${car.id}`}>Edit</Link>

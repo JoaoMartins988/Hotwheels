@@ -14,10 +14,11 @@ let navigate = useNavigate();
     Modelo: "",
     Cor: "",
     Ano: "",
+    tipo:"",
     preco:"",
   });
 
-  const{ marca, modelo, cor, ano, preco } = car;
+  const{ marca, modelo, cor, ano, tipo, preco } = car;
 
   const onImputChange = (e) => {
     setCars({ ...car, [e.target.name]: e.target.value });
@@ -30,7 +31,7 @@ let navigate = useNavigate();
     e.preventDefault();
     const response =  await axios.put(`http://localhost:8080/carrinho/${id}`, car);
      alert(response.data);
-     navigate("/");
+     navigate("/home");
   };
 
   const loadCars = async () => {
@@ -99,6 +100,19 @@ let navigate = useNavigate();
                 max={currentYear}
               />
               <div className="mb-3">
+              <label htmlFor="tipo" className="form-lab">
+                Tipo
+              </label>
+              <input
+                type={"text"}
+                className="form-control"
+                placeholder="Enter tipo"
+                name="tipo"
+                value={tipo}
+                onChange={(e) => onImputChange(e)}
+              />
+            </div>
+              <div className="mb-3">
             <label htmlFor="preco" className="form-label">
               Preço
             </label>
@@ -109,11 +123,12 @@ let navigate = useNavigate();
               name="preco"  
               value={preco}
               onChange={(e) => onImputChange(e)}
+              min="0.00"
             />
             </div>
             </div>
             <button type="submit" className="btn btn-outline-primary">Submit</button>
-            <Link className="btn btn-outline-danger mx-2" to="/">Cancel</Link>
+            <Link className="btn btn-outline-danger mx-2" to="/home">Cancel</Link>
           </form>
         </ div>
       </div>

@@ -22,13 +22,14 @@ public class CarrinhosController {
 
     @PostMapping("/carrinho")
     String newCarrinhos(@RequestBody Carrinhos newCarrinhos) {
-        if (isEmpty(newCarrinhos.getMarca()) || isEmpty(newCarrinhos.getModelo()) || isEmpty(newCarrinhos.getCor())) {
-            return "Marca, Modelo e cor são obrigatórios.";}
-        if (carRepository.existsByMarcaAndModeloAndCorAndAno(
+        if (isEmpty(newCarrinhos.getMarca()) || isEmpty(newCarrinhos.getModelo()) || isEmpty(newCarrinhos.getCor()) || isEmpty(newCarrinhos.getTipo())) {
+            return "Marca, Modelo, Cor e Tipo são obrigatórios.";}
+        if (carRepository.existsByMarcaAndModeloAndCorAndAnoAndTipo(
                 newCarrinhos.getMarca(),
                 newCarrinhos.getModelo(),
                 newCarrinhos.getCor(),
-                newCarrinhos.getAno())) {
+                newCarrinhos.getAno(),
+                newCarrinhos.getTipo())) {
             return "Carro duplicado";
         }
         carRepository.save(newCarrinhos);
@@ -67,13 +68,19 @@ public class CarrinhosController {
                     carro.setModelo(newCarro.getModelo());
                     carro.setCor(newCarro.getCor());
                     carro.setAno(newCarro.getAno());
+                    carro.setTipo(newCarro.getTipo());
                     carro.setPreco(newCarro.getPreco());
 
-                    if ((carRepository.existsByMarcaAndModeloAndCorAndAno(
+                    if (isEmpty(newCarro.getMarca()) || isEmpty(newCarro.getModelo()) || isEmpty(newCarro.getCor()) || isEmpty(newCarro.getTipo())) {
+                        return "Marca, Modelo, Cor e Tipo são obrigatórios.";}
+
+
+                    if ((carRepository.existsByMarcaAndModeloAndCorAndAnoAndTipo(
                             newCarro.getMarca(),
                             newCarro.getModelo(),
                             newCarro.getCor(),
-                            newCarro.getAno()))) {
+                            newCarro.getAno(),
+                            newCarro.getTipo()))) {
                         return "Carro duplicado";
                     } else {
                         carRepository.save(carro);
