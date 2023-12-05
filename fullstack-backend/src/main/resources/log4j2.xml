@@ -9,11 +9,6 @@
         <Console name="ConsoleAppender" target="SYSTEM_OUT" follow="true">
             <PatternLayout pattern="${LOG_PATTERN}"/>
         </Console>
-    </Appenders>
-    <Loggers>
-        <Logger name="com.code.fullstack-backend" level="debug" additivity="false">
-            <AppenderRef ref="ConsoleAppender" />
-        </Logger>
         <RollingFile name="FileAppender" fileName="logs/log4j2-demo.log"
                      filePattern="logs/log4j2-demo-%d{yyyy-MM-dd}-%i.log">
             <PatternLayout>
@@ -25,8 +20,14 @@
             </Policies>
             <DefaultRolloverStrategy max="10"/>
         </RollingFile>
-        <Root level="info">
+    </Appenders>
+    <Loggers>
+        <Logger name="com.code.fullstackbackend" level="debug" additivity="false">
             <AppenderRef ref="ConsoleAppender" />
+            <AppenderRef ref="FileAppender" />
+        </Logger>
+        <Root level="info">
+            <AppenderRef ref="ConsoleAppender"/>
             <AppenderRef ref="FileAppender"/>
         </Root>
     </Loggers>

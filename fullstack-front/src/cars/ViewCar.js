@@ -12,11 +12,11 @@ const [car, setCars] = useState({
     preço:""
 });
 
-const {id} = useParams();
+const { id } = useParams();
 
 useEffect(() => {
     loadCars();
-},);
+},[]);
 
 const loadCars = async () => {
     const result = await axios.get(`http://localhost:8080/carrinho/${id}`);
