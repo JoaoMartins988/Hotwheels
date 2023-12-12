@@ -1,0 +1,3 @@
+2023-12-05 00:30:11.939  INFO MININT-K87AE8S --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-05 00:30:11.963  INFO MININT-K87AE8S --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2023-12-05 00:30:11.974  INFO MININT-K87AE8S --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
