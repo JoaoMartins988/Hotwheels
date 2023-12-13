@@ -13,10 +13,10 @@ export default function AddCar() {
     cor: "",
     ano: "",
     tipo:"",
-    preco:"",
+    preço:"",
   });
 
-  const { marca, modelo, cor, ano, tipo, preco } = car;
+  const { marca, modelo, cor, ano, tipo, preço } = car;
 
   const onImputChange = (e) => { 
    setCar({...car,[e.target.name]: e.target.value });
@@ -109,8 +109,8 @@ return (
               type={"number"}
               className="form-control"
               placeholder="Enter preço"
-              name="preco"  
-              value={preco}
+              name="preço"  
+              value={preço}
               onChange={(e) => onImputChange(e)}
               min="0.00"
             />

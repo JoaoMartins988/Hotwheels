@@ -1,31 +1,31 @@
-2023-12-12 16:41:49.139  INFO MININT-K87AE8S --- [           main] c.c.f.FullstackBackendApplication        : Starting FullstackBackendApplication using Java 20.0.1 on MININT-K87AE8S with PID 4564 (C:\dev\hotwheels-management\fullstack-backend\target\classes started by Administrator in C:\dev\hotwheels-management\fullstack-backend)
-2023-12-12 16:41:49.198 DEBUG MININT-K87AE8S --- [           main] c.c.f.FullstackBackendApplication        : Running with Spring Boot v2.6.7, Spring v5.3.19
-2023-12-12 16:41:49.205  INFO MININT-K87AE8S --- [           main] c.c.f.FullstackBackendApplication        : No active profile set, falling back to 1 default profile: "default"
-2023-12-12 16:41:51.301  INFO MININT-K87AE8S --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-12-12 16:41:51.460  INFO MININT-K87AE8S --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 135 ms. Found 2 JPA repository interfaces.
-2023-12-12 16:41:52.677  INFO MININT-K87AE8S --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
-2023-12-12 16:41:52.697  INFO MININT-K87AE8S --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
-2023-12-12 16:41:52.699  INFO MININT-K87AE8S --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
-2023-12-12 16:41:52.700  INFO MININT-K87AE8S --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.62]
-2023-12-12 16:41:52.949  INFO MININT-K87AE8S --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
-2023-12-12 16:41:52.949  INFO MININT-K87AE8S --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3599 ms
-2023-12-12 16:41:53.288  INFO MININT-K87AE8S --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-12-12 16:41:53.409  INFO MININT-K87AE8S --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.8.Final
-2023-12-12 16:41:53.879  INFO MININT-K87AE8S --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-12-12 16:41:54.069  INFO MININT-K87AE8S --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
-2023-12-12 16:41:54.985  INFO MININT-K87AE8S --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
-2023-12-12 16:41:55.076  INFO MININT-K87AE8S --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2023-12-12 16:41:57.132  INFO MININT-K87AE8S --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-12-12 16:41:57.152  INFO MININT-K87AE8S --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-12-12 16:41:58.666  WARN MININT-K87AE8S --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-12-12 16:41:59.823  INFO MININT-K87AE8S --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
-2023-12-12 16:42:00.102  INFO MININT-K87AE8S --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
-2023-12-12 16:42:00.142  INFO MININT-K87AE8S --- [           main] c.c.f.FullstackBackendApplication        : Started FullstackBackendApplication in 11.916 seconds (JVM running for 14.226)
-2023-12-12 16:42:00.147 DEBUG MININT-K87AE8S --- [           main] c.c.f.FullstackBackendApplication        : Debugging log
-2023-12-12 16:42:00.147  INFO MININT-K87AE8S --- [           main] c.c.f.FullstackBackendApplication        : Info log
-2023-12-12 16:42:00.147  WARN MININT-K87AE8S --- [           main] c.c.f.FullstackBackendApplication        : Hey, This is a warning!
-2023-12-12 16:42:00.148 ERROR MININT-K87AE8S --- [           main] c.c.f.FullstackBackendApplication        : Oops! We have an Error. OK
-2023-12-12 16:42:00.148 FATAL MININT-K87AE8S --- [           main] c.c.f.FullstackBackendApplication        : Damn! Fatal error. Please fix me.
-2023-12-12 16:42:43.813  INFO MININT-K87AE8S --- [nio-8080-exec-4] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-12-12 16:42:43.814  INFO MININT-K87AE8S --- [nio-8080-exec-4] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
-2023-12-12 16:42:43.815  INFO MININT-K87AE8S --- [nio-8080-exec-4] o.s.w.s.DispatcherServlet                : Completed initialization in 1 ms
+2023-12-13 12:06:34.163  INFO MININT-K87AE8S --- [           main] c.c.f.FullstackBackendApplication        : Starting FullstackBackendApplication using Java 20.0.1 on MININT-K87AE8S with PID 8736 (C:\dev\hotwheels-management\fullstack-backend\target\classes started by Administrator in C:\dev\hotwheels-management\fullstack-backend)
+2023-12-13 12:06:34.214 DEBUG MININT-K87AE8S --- [           main] c.c.f.FullstackBackendApplication        : Running with Spring Boot v2.6.7, Spring v5.3.19
+2023-12-13 12:06:34.217  INFO MININT-K87AE8S --- [           main] c.c.f.FullstackBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-12-13 12:06:36.189  INFO MININT-K87AE8S --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-13 12:06:36.387  INFO MININT-K87AE8S --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 167 ms. Found 2 JPA repository interfaces.
+2023-12-13 12:06:38.247  INFO MININT-K87AE8S --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2023-12-13 12:06:38.273  INFO MININT-K87AE8S --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2023-12-13 12:06:38.275  INFO MININT-K87AE8S --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2023-12-13 12:06:38.276  INFO MININT-K87AE8S --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2023-12-13 12:06:38.677  INFO MININT-K87AE8S --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2023-12-13 12:06:38.677  INFO MININT-K87AE8S --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4309 ms
+2023-12-13 12:06:39.149  INFO MININT-K87AE8S --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-13 12:06:39.348  INFO MININT-K87AE8S --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.8.Final
+2023-12-13 12:06:40.095  INFO MININT-K87AE8S --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-13 12:06:40.482  INFO MININT-K87AE8S --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2023-12-13 12:06:41.655  INFO MININT-K87AE8S --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2023-12-13 12:06:41.726  INFO MININT-K87AE8S --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-13 12:06:43.721  INFO MININT-K87AE8S --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-13 12:06:43.739  INFO MININT-K87AE8S --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-13 12:06:45.294  WARN MININT-K87AE8S --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-13 12:06:46.281  INFO MININT-K87AE8S --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2023-12-13 12:06:46.417  INFO MININT-K87AE8S --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2023-12-13 12:06:46.496  INFO MININT-K87AE8S --- [           main] c.c.f.FullstackBackendApplication        : Started FullstackBackendApplication in 13.671 seconds (JVM running for 16.77)
+2023-12-13 12:06:46.502 DEBUG MININT-K87AE8S --- [           main] c.c.f.FullstackBackendApplication        : Debugging log
+2023-12-13 12:06:46.502  INFO MININT-K87AE8S --- [           main] c.c.f.FullstackBackendApplication        : Info log
+2023-12-13 12:06:46.503  WARN MININT-K87AE8S --- [           main] c.c.f.FullstackBackendApplication        : Hey, This is a warning!
+2023-12-13 12:06:46.503 ERROR MININT-K87AE8S --- [           main] c.c.f.FullstackBackendApplication        : Oops! We have an Error. OK
+2023-12-13 12:06:46.503 FATAL MININT-K87AE8S --- [           main] c.c.f.FullstackBackendApplication        : Damn! Fatal error. Please fix me.
+2023-12-13 12:11:35.094  INFO MININT-K87AE8S --- [nio-8080-exec-2] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-13 12:11:35.095  INFO MININT-K87AE8S --- [nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2023-12-13 12:11:35.096  INFO MININT-K87AE8S --- [nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Completed initialization in 1 ms

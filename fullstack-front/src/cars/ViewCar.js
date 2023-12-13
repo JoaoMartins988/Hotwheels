@@ -8,8 +8,8 @@ const [car, setCars] = useState({
     modelo: "",
     cor: "",
     ano: "",
-    tipo:"",
-    preço:""
+    tipo: "",
+    preco: "",
 });
 
 const { id } = useParams();
@@ -33,28 +33,28 @@ const loadCars = async () => {
                             Details of car id : {car.id}
                             <ul className="list-group list-group-flush">
                                 <li className="list-group-item">
-                                    <b>marca:</b>
+                                    <b>marca: </b>
                                     {car.marca}
                                 </li>
                                 <li className="list-group-item">
-                                    <b>modelo:</b>
+                                    <b>modelo: </b>
                                     {car.modelo}
                                 </li>
                                 <li className="list-group-item">
-                                    <b>cor:</b>
+                                    <b>cor: </b>
                                     {car.cor}
                                 </li>    
                                 <li className="list-group-item">
-                                    <b>ano:</b>
+                                    <b>ano: </b>
                                     {car.ano}
                                 </li>
                                 <li className="list-group-item">
-                                    <b>tipo:</b>
+                                    <b>tipo: </b>
                                     {car.tipo}
                                 </li>
                                 <li className="list-group-item">
-                                    <b>preço:</b>
-                                    {car.preço}
+                                    <b>preço: </b>
+                                    {car.preco}
                                 </li>
                             </ul>
                         </div>
